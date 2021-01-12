@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.7.0 on darwin)" generated="20210102 17:43:33.069" rpa="false">
+<suite id="s1" name="Testcases" source="/Users/wuyanjiao/2020/python进阶班/robot_app_demo/testcases">
+<suite id="s1-s1" name="Publish Topic" source="/Users/wuyanjiao/2020/python进阶班/robot_app_demo/testcases/publish_topic.robot">
+<kw name="打开浏览器到网站首页" library="common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>url=${indexpage}</arg>
+<arg>browser=chrome</arg>
+<arg>executable_path=./drivers/chromedriver</arg>
+</arguments>
+<msg timestamp="20210102 17:43:33.376" level="INFO">Opening browser 'chrome' to base url 'http://49.233.108.117:3000/'.</msg>
+<status status="PASS" starttime="20210102 17:43:33.375" endtime="20210102 17:43:42.657"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:43:42.658" endtime="20210102 17:43:42.661"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210102 17:43:42.661" endtime="20210102 17:43:42.813"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:33.375" endtime="20210102 17:43:42.814"></status>
+</kw>
+<test id="s1-s1-t1" name="用户登录">
+<kw name="首页导航_用户导航到" library="useraction">
+<arguments>
+<arg>登录</arg>
+</arguments>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<arguments>
+<arg>xpath://ul[@class="nav pull-right"]/li</arg>
+</arguments>
+<assign>
+<var>${pages}</var>
+</assign>
+<msg timestamp="20210102 17:43:42.834" level="INFO">${pages} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="963526d94fdb98075d044612d0423964", element="19891e29-36dc-4ec3-a840-80735be73059")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20210102 17:43:42.816" endtime="20210102 17:43:42.834"></status>
+</kw>
+<kw name="${page} IN [ @{pages} ]" type="for">
+<kw name="${page} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;963526d94fdb98075d044612d0423964&quot;, element=&quot;19891e29-36dc-4ec3-a840-80735be73059&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${page}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210102 17:43:42.848" level="INFO">${text} = 首页</msg>
+<status status="PASS" starttime="20210102 17:43:42.835" endtime="20210102 17:43:42.848"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>click element</arg>
+<arg>${page}</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:43:42.849" endtime="20210102 17:43:42.849"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:43:42.849" endtime="20210102 17:43:42.850"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:42.835" endtime="20210102 17:43:42.850"></status>
+</kw>
+<kw name="${page} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;963526d94fdb98075d044612d0423964&quot;, element=&quot;80a50a1f-1889-4bde-98a0-1a003f695c46&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${page}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210102 17:43:42.868" level="INFO">${text} = 新手入门</msg>
+<status status="PASS" starttime="20210102 17:43:42.850" endtime="20210102 17:43:42.868"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>click element</arg>
+<arg>${page}</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:43:42.869" endtime="20210102 17:43:42.869"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:43:42.869" endtime="20210102 17:43:42.870"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:42.850" endtime="20210102 17:43:42.870"></status>
+</kw>
+<kw name="${page} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;963526d94fdb98075d044612d0423964&quot;, element=&quot;06516aa1-02e2-4a96-ba3c-8a3979b5fdae&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${page}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210102 17:43:42.884" level="INFO">${text} = API</msg>
+<status status="PASS" starttime="20210102 17:43:42.870" endtime="20210102 17:43:42.884"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>click element</arg>
+<arg>${page}</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:43:42.884" endtime="20210102 17:43:42.885"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:43:42.885" endtime="20210102 17:43:42.886"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:42.870" endtime="20210102 17:43:42.886"></status>
+</kw>
+<kw name="${page} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;963526d94fdb98075d044612d0423964&quot;, element=&quot;0207555f-5837-4bb4-887b-0f4acede3a9e&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${page}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210102 17:43:42.897" level="INFO">${text} = 关于</msg>
+<status status="PASS" starttime="20210102 17:43:42.886" endtime="20210102 17:43:42.897"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>click element</arg>
+<arg>${page}</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:43:42.898" endtime="20210102 17:43:42.898"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:43:42.898" endtime="20210102 17:43:42.899"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:42.886" endtime="20210102 17:43:42.899"></status>
+</kw>
+<kw name="${page} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;963526d94fdb98075d044612d0423964&quot;, element=&quot;51e36c03-fed2-4515-af31-402744616ec2&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${page}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210102 17:43:42.911" level="INFO">${text} = 注册</msg>
+<status status="PASS" starttime="20210102 17:43:42.899" endtime="20210102 17:43:42.911"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>click element</arg>
+<arg>${page}</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:43:42.911" endtime="20210102 17:43:42.911"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:43:42.912" endtime="20210102 17:43:42.912"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:42.899" endtime="20210102 17:43:42.912"></status>
+</kw>
+<kw name="${page} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;963526d94fdb98075d044612d0423964&quot;, element=&quot;27a14452-5752-4c17-ae78-506627b5e63e&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${page}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210102 17:43:42.929" level="INFO">${text} = 登录</msg>
+<status status="PASS" starttime="20210102 17:43:42.912" endtime="20210102 17:43:42.929"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>click element</arg>
+<arg>${page}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${page}</arg>
+</arguments>
+<msg timestamp="20210102 17:43:42.930" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="963526d94fdb98075d044612d0423964", element="27a14452-5752-4c17-ae78-506627b5e63e")&gt;'.</msg>
+<status status="PASS" starttime="20210102 17:43:42.930" endtime="20210102 17:43:43.503"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:42.929" endtime="20210102 17:43:43.503"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20210102 17:43:43.504" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20210102 17:43:43.504" endtime="20210102 17:43:43.505"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:43.503" endtime="20210102 17:43:43.505"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:42.912" endtime="20210102 17:43:43.505"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:42.834" endtime="20210102 17:43:43.505"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:42.816" endtime="20210102 17:43:43.505"></status>
+</kw>
+<kw name="输入用户名密码并点击登录按钮" library="loginpage">
+<arguments>
+<arg>fanmao1</arg>
+<arg>123456</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="name"]</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210102 17:43:43.506" level="INFO">Typing text 'fanmao1' into text field 'xpath://*[@id="name"]'.</msg>
+<status status="PASS" starttime="20210102 17:43:43.506" endtime="20210102 17:43:43.724"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="pass"]</arg>
+<arg>${passwd}</arg>
+</arguments>
+<msg timestamp="20210102 17:43:43.725" level="INFO">Typing password into text field 'xpath://*[@id="pass"]'.</msg>
+<msg timestamp="20210102 17:43:43.769" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210102 17:43:43.824" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210102 17:43:43.725" endtime="20210102 17:43:43.825"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@type="submit"]</arg>
+</arguments>
+<msg timestamp="20210102 17:43:43.825" level="INFO">Clicking element 'xpath://*[@type="submit"]'.</msg>
+<status status="PASS" starttime="20210102 17:43:43.825" endtime="20210102 17:43:47.043"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:43.505" endtime="20210102 17:43:47.043"></status>
+</kw>
+<tags>
+<tag>用户发帖测试</tag>
+</tags>
+<status status="PASS" starttime="20210102 17:43:42.814" endtime="20210102 17:43:47.043" critical="yes"></status>
+</test>
+<test id="s1-s1-t2" name="用户发帖">
+<kw name="发布话题" library="common">
+<arguments>
+<arg>分享</arg>
+<arg>测试技术学习的方法</arg>
+<arg>测试技术学习的方法就是不停的练习，保持肌肉手感，每天坚持一练，一定会有成效的！</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://span[@class="span-success"]</arg>
+</arguments>
+<msg timestamp="20210102 17:43:47.047" level="INFO">Clicking element 'xpath://span[@class="span-success"]'.</msg>
+<status status="PASS" starttime="20210102 17:43:47.046" endtime="20210102 17:43:48.180"></status>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<arguments>
+<arg>xpath://select[@name="tab"]/option</arg>
+</arguments>
+<assign>
+<var>${tags}</var>
+</assign>
+<msg timestamp="20210102 17:43:48.194" level="INFO">${tags} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="963526d94fdb98075d044612d0423964", element="972c0a0e-f1fa-43d3-a5f6-b000eccedbf1")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20210102 17:43:48.180" endtime="20210102 17:43:48.194"></status>
+</kw>
+<kw name="${tag} IN [ @{tags} ]" type="for">
+<kw name="${tag} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;963526d94fdb98075d044612d0423964&quot;, element=&quot;972c0a0e-f1fa-43d3-a5f6-b000eccedbf1&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${tag}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210102 17:43:48.211" level="INFO">${text} = 请选择</msg>
+<status status="PASS" starttime="20210102 17:43:48.195" endtime="20210102 17:43:48.211"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${tab-selector}'</arg>
+<arg>click element</arg>
+<arg>${tag}</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:43:48.212" endtime="20210102 17:43:48.212"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${tab-selector}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:43:48.212" endtime="20210102 17:43:48.212"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:48.195" endtime="20210102 17:43:48.213"></status>
+</kw>
+<kw name="${tag} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;963526d94fdb98075d044612d0423964&quot;, element=&quot;3fc89208-ddf6-4ff6-bab1-be2c9441a2be&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${tag}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210102 17:43:48.227" level="INFO">${text} = 分享</msg>
+<status status="PASS" starttime="20210102 17:43:48.213" endtime="20210102 17:43:48.227"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${tab-selector}'</arg>
+<arg>click element</arg>
+<arg>${tag}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${tag}</arg>
+</arguments>
+<msg timestamp="20210102 17:43:48.228" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="963526d94fdb98075d044612d0423964", element="3fc89208-ddf6-4ff6-bab1-be2c9441a2be")&gt;'.</msg>
+<status status="PASS" starttime="20210102 17:43:48.227" endtime="20210102 17:43:48.253"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:48.227" endtime="20210102 17:43:48.253"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${tab-selector}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20210102 17:43:48.255" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20210102 17:43:48.255" endtime="20210102 17:43:48.255"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:48.253" endtime="20210102 17:43:48.257"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:48.213" endtime="20210102 17:43:48.257"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:48.194" endtime="20210102 17:43:48.257"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://textarea[@name="title"]</arg>
+<arg>${title}</arg>
+</arguments>
+<msg timestamp="20210102 17:43:48.257" level="INFO">Typing text '测试技术学习的方法' into text field 'xpath://textarea[@name="title"]'.</msg>
+<status status="PASS" starttime="20210102 17:43:48.257" endtime="20210102 17:43:48.367"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>xpath://div[@class="CodeMirror-scroll"]</arg>
+<arg>${content}</arg>
+</arguments>
+<msg timestamp="20210102 17:43:48.368" level="INFO">Sending key(s) ('测试技术学习的方法就是不停的练习，保持肌肉手感，每天坚持一练，一定会有成效的！',) to xpath://div[@class="CodeMirror-scroll"] element.</msg>
+<msg timestamp="20210102 17:43:48.651" level="INFO">Sending keys 测试技术学习的方法就是不停的练习，保持肌肉手感，每天坚持一练，一定会有成效的！</msg>
+<status status="PASS" starttime="20210102 17:43:48.368" endtime="20210102 17:43:48.772"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://input[@value="提交"]</arg>
+</arguments>
+<msg timestamp="20210102 17:43:48.773" level="INFO">Clicking element 'xpath://input[@value="提交"]'.</msg>
+<status status="PASS" starttime="20210102 17:43:48.772" endtime="20210102 17:43:49.794"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:47.045" endtime="20210102 17:43:49.795"></status>
+</kw>
+<tags>
+<tag>用户发帖测试</tag>
+</tags>
+<status status="PASS" starttime="20210102 17:43:47.044" endtime="20210102 17:43:49.795" critical="yes"></status>
+</test>
+<test id="s1-s1-t3" name="退出登录">
+<kw name="清除用户登录状态并跳转至首页" library="common">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20210102 17:43:49.797" endtime="20210102 17:43:49.817"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${indexpage}</arg>
+</arguments>
+<msg timestamp="20210102 17:43:49.817" level="INFO">Opening url 'http://49.233.108.117:3000/'</msg>
+<status status="PASS" starttime="20210102 17:43:49.817" endtime="20210102 17:43:52.886"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:49.797" endtime="20210102 17:43:52.886"></status>
+</kw>
+<tags>
+<tag>用户发帖测试</tag>
+</tags>
+<status status="PASS" starttime="20210102 17:43:49.796" endtime="20210102 17:43:52.886" critical="yes"></status>
+</test>
+<kw name="关闭浏览器" library="common" type="teardown">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210102 17:43:52.889" endtime="20210102 17:43:53.059"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:52.888" endtime="20210102 17:43:53.060"></status>
+</kw>
+<doc>用户发帖</doc>
+<status status="PASS" starttime="20210102 17:43:33.106" endtime="20210102 17:43:53.060"></status>
+</suite>
+<suite id="s1-s2" name="Reply Topic" source="/Users/wuyanjiao/2020/python进阶班/robot_app_demo/testcases/reply_topic.robot">
+<kw name="打开浏览器到网站首页" library="common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>url=${indexpage}</arg>
+<arg>browser=chrome</arg>
+<arg>executable_path=./drivers/chromedriver</arg>
+</arguments>
+<msg timestamp="20210102 17:43:53.106" level="INFO">Opening browser 'chrome' to base url 'http://49.233.108.117:3000/'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210102 17:43:57.446" level="FAIL">NoSuchWindowException: Message: no such window: window was already closed
+  (Session info: chrome=87.0.4280.88)
+</msg>
+<status status="FAIL" starttime="20210102 17:43:57.404" endtime="20210102 17:43:57.446"></status>
+</kw>
+<msg timestamp="20210102 17:43:57.446" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: window was already closed
+  (Session info: chrome=87.0.4280.88)
+</msg>
+<msg timestamp="20210102 17:43:57.447" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=87.0.4280.88)
+</msg>
+<status status="FAIL" starttime="20210102 17:43:53.104" endtime="20210102 17:43:57.448"></status>
+</kw>
+<status status="FAIL" starttime="20210102 17:43:53.103" endtime="20210102 17:43:57.448"></status>
+</kw>
+<test id="s1-s2-t1" name="用户登录">
+<tags>
+<tag>用户回帖测试</tag>
+</tags>
+<status status="FAIL" starttime="20210102 17:43:57.448" endtime="20210102 17:43:57.450" critical="yes">Parent suite setup failed:
+WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=87.0.4280.88)
+</status>
+</test>
+<test id="s1-s2-t2" name="用户回帖">
+<tags>
+<tag>用户回帖测试</tag>
+</tags>
+<status status="FAIL" starttime="20210102 17:43:57.450" endtime="20210102 17:43:57.451" critical="yes">Parent suite setup failed:
+WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=87.0.4280.88)
+</status>
+</test>
+<test id="s1-s2-t3" name="退出登录">
+<tags>
+<tag>用户回帖测试</tag>
+</tags>
+<status status="FAIL" starttime="20210102 17:43:57.451" endtime="20210102 17:43:57.452" critical="yes">Parent suite setup failed:
+WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=87.0.4280.88)
+</status>
+</test>
+<kw name="关闭浏览器" library="common" type="teardown">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210102 17:43:57.454" endtime="20210102 17:43:57.564"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:43:57.453" endtime="20210102 17:43:57.565"></status>
+</kw>
+<doc>用户回帖</doc>
+<status status="FAIL" starttime="20210102 17:43:53.079" endtime="20210102 17:43:57.565">Suite setup failed:
+WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=87.0.4280.88)
+</status>
+</suite>
+<suite id="s1-s3" name="User Login" source="/Users/wuyanjiao/2020/python进阶班/robot_app_demo/testcases/user_login.robot">
+<kw name="打开浏览器到网站首页" library="common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>url=${indexpage}</arg>
+<arg>browser=chrome</arg>
+<arg>executable_path=./drivers/chromedriver</arg>
+</arguments>
+<msg timestamp="20210102 17:43:57.577" level="INFO">Opening browser 'chrome' to base url 'http://49.233.108.117:3000/'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210102 17:44:01.542" level="FAIL">NoSuchWindowException: Message: no such window: window was already closed
+  (Session info: chrome=87.0.4280.88)
+</msg>
+<status status="FAIL" starttime="20210102 17:44:01.504" endtime="20210102 17:44:01.542"></status>
+</kw>
+<msg timestamp="20210102 17:44:01.542" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: window was already closed
+  (Session info: chrome=87.0.4280.88)
+</msg>
+<msg timestamp="20210102 17:44:01.543" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=87.0.4280.88)
+</msg>
+<status status="FAIL" starttime="20210102 17:43:57.577" endtime="20210102 17:44:01.543"></status>
+</kw>
+<status status="FAIL" starttime="20210102 17:43:57.576" endtime="20210102 17:44:01.543"></status>
+</kw>
+<test id="s1-s3-t1" name="使用正确的用户名和密码成功登录系统">
+<status status="FAIL" starttime="20210102 17:44:01.543" endtime="20210102 17:44:01.546" critical="yes">Parent suite setup failed:
+WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=87.0.4280.88)
+</status>
+</test>
+<test id="s1-s3-t2" name="使用错误的用户名和密码登录失败验证错误提示信息">
+<status status="FAIL" starttime="20210102 17:44:01.546" endtime="20210102 17:44:01.549" critical="yes">Parent suite setup failed:
+WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=87.0.4280.88)
+</status>
+</test>
+<test id="s1-s3-t3" name="使用错误的用户名和密码登录失败验证错误提示信息">
+<status status="FAIL" starttime="20210102 17:44:01.549" endtime="20210102 17:44:01.552" critical="yes">Parent suite setup failed:
+WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=87.0.4280.88)
+</status>
+</test>
+<test id="s1-s3-t4" name="使用错误的用户名和密码登录失败验证错误提示信息">
+<status status="FAIL" starttime="20210102 17:44:01.552" endtime="20210102 17:44:01.555" critical="yes">Parent suite setup failed:
+WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=87.0.4280.88)
+</status>
+</test>
+<kw name="关闭浏览器" library="common" type="teardown">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210102 17:44:01.557" endtime="20210102 17:44:01.681"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:44:01.556" endtime="20210102 17:44:01.681"></status>
+</kw>
+<doc>用户登录</doc>
+<status status="FAIL" starttime="20210102 17:43:57.567" endtime="20210102 17:44:01.681">Suite setup failed:
+WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=87.0.4280.88)
+</status>
+</suite>
+<suite id="s1-s4" name="User Register" source="/Users/wuyanjiao/2020/python进阶班/robot_app_demo/testcases/user_register.robot">
+<kw name="打开浏览器到网站首页" library="common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>url=${indexpage}</arg>
+<arg>browser=chrome</arg>
+<arg>executable_path=./drivers/chromedriver</arg>
+</arguments>
+<msg timestamp="20210102 17:44:01.715" level="INFO">Opening browser 'chrome' to base url 'http://49.233.108.117:3000/'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210102 17:44:05.425" level="FAIL">NoSuchWindowException: Message: no such window: window was already closed
+  (Session info: chrome=87.0.4280.88)
+</msg>
+<status status="FAIL" starttime="20210102 17:44:05.395" endtime="20210102 17:44:05.425"></status>
+</kw>
+<msg timestamp="20210102 17:44:05.425" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: window was already closed
+  (Session info: chrome=87.0.4280.88)
+</msg>
+<msg timestamp="20210102 17:44:05.425" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=87.0.4280.88)
+</msg>
+<status status="FAIL" starttime="20210102 17:44:01.715" endtime="20210102 17:44:05.425"></status>
+</kw>
+<status status="FAIL" starttime="20210102 17:44:01.714" endtime="20210102 17:44:05.426"></status>
+</kw>
+<test id="s1-s4-t1" name="用户名不填密码确认密码和邮箱填注册失败验证错误提示信息">
+<tags>
+<tag>用户注册测试</tag>
+</tags>
+<status status="FAIL" starttime="20210102 17:44:05.426" endtime="20210102 17:44:05.429" critical="yes">Parent suite setup failed:
+WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=87.0.4280.88)
+</status>
+</test>
+<test id="s1-s4-t2" name="密码不填用户名确认密码和邮箱填注册失败验证错误提示信息">
+<tags>
+<tag>用户注册测试</tag>
+</tags>
+<status status="FAIL" starttime="20210102 17:44:05.430" endtime="20210102 17:44:05.433" critical="yes">Parent suite setup failed:
+WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=87.0.4280.88)
+</status>
+</test>
+<test id="s1-s4-t3" name="确认密码填写错误用户名密码和邮箱填注册失败验证错误提示信息">
+<tags>
+<tag>用户注册测试</tag>
+</tags>
+<status status="FAIL" starttime="20210102 17:44:05.433" endtime="20210102 17:44:05.436" critical="yes">Parent suite setup failed:
+WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=87.0.4280.88)
+</status>
+</test>
+<test id="s1-s4-t4" name="输入注册过的用户名或邮箱注册失败验证错误提示信息">
+<tags>
+<tag>用户注册测试</tag>
+</tags>
+<status status="FAIL" starttime="20210102 17:44:05.437" endtime="20210102 17:44:05.442" critical="yes">Parent suite setup failed:
+WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=87.0.4280.88)
+</status>
+</test>
+<test id="s1-s4-t5" name="输入未注册过的用户名或邮箱注册成功验证成功提示信息">
+<tags>
+<tag>用户注册测试</tag>
+</tags>
+<status status="FAIL" starttime="20210102 17:44:05.442" endtime="20210102 17:44:05.446" critical="yes">Parent suite setup failed:
+WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=87.0.4280.88)
+</status>
+</test>
+<kw name="关闭浏览器" library="common" type="teardown">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210102 17:44:05.447" endtime="20210102 17:44:05.581"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:44:05.447" endtime="20210102 17:44:05.581"></status>
+</kw>
+<doc>用户注册</doc>
+<status status="FAIL" starttime="20210102 17:44:01.686" endtime="20210102 17:44:05.581">Suite setup failed:
+WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: cannot determine loading status
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=87.0.4280.88)
+</status>
+</suite>
+<status status="FAIL" starttime="20210102 17:43:33.072" endtime="20210102 17:44:05.584"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="12">Critical Tests</stat>
+<stat pass="3" fail="12">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0">用户发帖测试</stat>
+<stat pass="0" fail="3">用户回帖测试</stat>
+<stat pass="0" fail="5">用户注册测试</stat>
+</tag>
+<suite>
+<stat pass="3" fail="12" id="s1" name="Testcases">Testcases</stat>
+<stat pass="3" fail="0" id="s1-s1" name="Publish Topic">Testcases.Publish Topic</stat>
+<stat pass="0" fail="3" id="s1-s2" name="Reply Topic">Testcases.Reply Topic</stat>
+<stat pass="0" fail="4" id="s1-s3" name="User Login">Testcases.User Login</stat>
+<stat pass="0" fail="5" id="s1-s4" name="User Register">Testcases.User Register</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210102 17:43:57.446" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: window was already closed
+  (Session info: chrome=87.0.4280.88)
+</msg>
+<msg timestamp="20210102 17:44:01.542" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: window was already closed
+  (Session info: chrome=87.0.4280.88)
+</msg>
+<msg timestamp="20210102 17:44:01.549" level="WARN">Multiple test cases with name '使用错误的用户名和密码登录失败验证错误提示信息' executed in test suite 'Testcases.User Login'.</msg>
+<msg timestamp="20210102 17:44:01.552" level="WARN">Multiple test cases with name '使用错误的用户名和密码登录失败验证错误提示信息' executed in test suite 'Testcases.User Login'.</msg>
+<msg timestamp="20210102 17:44:05.425" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: window was already closed
+  (Session info: chrome=87.0.4280.88)
+</msg>
+</errors>
+</robot>

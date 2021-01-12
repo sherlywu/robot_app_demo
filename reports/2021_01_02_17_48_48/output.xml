@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.7.0 on darwin)" generated="20210102 17:48:48.909" rpa="false">
+<suite id="s1" name="Publish Topic" source="/Users/wuyanjiao/2020/python进阶班/robot_app_demo/testcases/publish_topic.robot">
+<kw name="打开浏览器到网站首页" library="common" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>url=${indexpage}</arg>
+<arg>browser=chrome</arg>
+<arg>executable_path=./drivers/chromedriver</arg>
+</arguments>
+<msg timestamp="20210102 17:48:49.211" level="INFO">Opening browser 'chrome' to base url 'http://49.233.108.117:3000/'.</msg>
+<status status="PASS" starttime="20210102 17:48:49.211" endtime="20210102 17:48:56.506"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:48:56.507" endtime="20210102 17:48:56.510"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210102 17:48:56.510" endtime="20210102 17:48:56.651"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:48:49.211" endtime="20210102 17:48:56.651"></status>
+</kw>
+<test id="s1-t1" name="用户登录">
+<kw name="首页导航_用户导航到" library="useraction">
+<arguments>
+<arg>登录</arg>
+</arguments>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<arguments>
+<arg>xpath://ul[@class="nav pull-right"]/li</arg>
+</arguments>
+<assign>
+<var>${pages}</var>
+</assign>
+<msg timestamp="20210102 17:48:56.671" level="INFO">${pages} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="5501575680981ce44f04f6800f4b5e62", element="ad23a0c7-7b16-421c-b8c6-4e038bcc8f86")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20210102 17:48:56.653" endtime="20210102 17:48:56.671"></status>
+</kw>
+<kw name="${page} IN [ @{pages} ]" type="for">
+<kw name="${page} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;5501575680981ce44f04f6800f4b5e62&quot;, element=&quot;ad23a0c7-7b16-421c-b8c6-4e038bcc8f86&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${page}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210102 17:48:56.684" level="INFO">${text} = 首页</msg>
+<status status="PASS" starttime="20210102 17:48:56.672" endtime="20210102 17:48:56.684"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>click element</arg>
+<arg>${page}</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:48:56.684" endtime="20210102 17:48:56.685"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:48:56.685" endtime="20210102 17:48:56.685"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:48:56.671" endtime="20210102 17:48:56.685"></status>
+</kw>
+<kw name="${page} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;5501575680981ce44f04f6800f4b5e62&quot;, element=&quot;b82e04e5-670e-4bdc-a3b8-5bb59dea5272&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${page}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210102 17:48:56.697" level="INFO">${text} = 新手入门</msg>
+<status status="PASS" starttime="20210102 17:48:56.685" endtime="20210102 17:48:56.697"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>click element</arg>
+<arg>${page}</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:48:56.697" endtime="20210102 17:48:56.697"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:48:56.697" endtime="20210102 17:48:56.698"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:48:56.685" endtime="20210102 17:48:56.698"></status>
+</kw>
+<kw name="${page} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;5501575680981ce44f04f6800f4b5e62&quot;, element=&quot;582afa90-d69f-41f9-8b62-1dce7b98b3a0&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${page}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210102 17:48:56.711" level="INFO">${text} = API</msg>
+<status status="PASS" starttime="20210102 17:48:56.698" endtime="20210102 17:48:56.711"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>click element</arg>
+<arg>${page}</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:48:56.711" endtime="20210102 17:48:56.712"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:48:56.712" endtime="20210102 17:48:56.712"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:48:56.698" endtime="20210102 17:48:56.712"></status>
+</kw>
+<kw name="${page} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;5501575680981ce44f04f6800f4b5e62&quot;, element=&quot;b6f56daa-0836-4aaa-b301-f9085c6e2703&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${page}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210102 17:48:56.730" level="INFO">${text} = 关于</msg>
+<status status="PASS" starttime="20210102 17:48:56.712" endtime="20210102 17:48:56.731"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>click element</arg>
+<arg>${page}</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:48:56.731" endtime="20210102 17:48:56.732"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:48:56.732" endtime="20210102 17:48:56.732"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:48:56.712" endtime="20210102 17:48:56.732"></status>
+</kw>
+<kw name="${page} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;5501575680981ce44f04f6800f4b5e62&quot;, element=&quot;a0a16b01-5075-42ed-b43d-7169f8dde014&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${page}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210102 17:48:56.745" level="INFO">${text} = 注册</msg>
+<status status="PASS" starttime="20210102 17:48:56.732" endtime="20210102 17:48:56.745"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>click element</arg>
+<arg>${page}</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:48:56.746" endtime="20210102 17:48:56.746"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:48:56.747" endtime="20210102 17:48:56.747"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:48:56.732" endtime="20210102 17:48:56.748"></status>
+</kw>
+<kw name="${page} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;5501575680981ce44f04f6800f4b5e62&quot;, element=&quot;dd5caca7-a291-4850-89e5-c137c16d51c5&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${page}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210102 17:48:56.764" level="INFO">${text} = 登录</msg>
+<status status="PASS" starttime="20210102 17:48:56.748" endtime="20210102 17:48:56.764"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>click element</arg>
+<arg>${page}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${page}</arg>
+</arguments>
+<msg timestamp="20210102 17:48:56.766" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="5501575680981ce44f04f6800f4b5e62", element="dd5caca7-a291-4850-89e5-c137c16d51c5")&gt;'.</msg>
+<status status="PASS" starttime="20210102 17:48:56.766" endtime="20210102 17:48:57.167"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:48:56.765" endtime="20210102 17:48:57.167"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${page_name}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20210102 17:48:57.168" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20210102 17:48:57.168" endtime="20210102 17:48:57.168"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:48:57.167" endtime="20210102 17:48:57.168"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:48:56.748" endtime="20210102 17:48:57.168"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:48:56.671" endtime="20210102 17:48:57.168"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:48:56.653" endtime="20210102 17:48:57.168"></status>
+</kw>
+<kw name="输入用户名密码并点击登录按钮" library="loginpage">
+<arguments>
+<arg>fanmao1</arg>
+<arg>123456</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="name"]</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210102 17:48:57.169" level="INFO">Typing text 'fanmao1' into text field 'xpath://*[@id="name"]'.</msg>
+<status status="PASS" starttime="20210102 17:48:57.169" endtime="20210102 17:48:57.360"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="pass"]</arg>
+<arg>${passwd}</arg>
+</arguments>
+<msg timestamp="20210102 17:48:57.360" level="INFO">Typing password into text field 'xpath://*[@id="pass"]'.</msg>
+<msg timestamp="20210102 17:48:57.422" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210102 17:48:57.483" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210102 17:48:57.360" endtime="20210102 17:48:57.484"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@type="submit"]</arg>
+</arguments>
+<msg timestamp="20210102 17:48:57.484" level="INFO">Clicking element 'xpath://*[@type="submit"]'.</msg>
+<status status="PASS" starttime="20210102 17:48:57.484" endtime="20210102 17:49:00.657"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:48:57.169" endtime="20210102 17:49:00.657"></status>
+</kw>
+<tags>
+<tag>用户发帖测试</tag>
+</tags>
+<status status="PASS" starttime="20210102 17:48:56.651" endtime="20210102 17:49:00.658" critical="yes"></status>
+</test>
+<test id="s1-t2" name="用户发帖">
+<kw name="发布话题" library="common">
+<arguments>
+<arg>分享</arg>
+<arg>测试技术学习的方法</arg>
+<arg>测试技术学习的方法就是不停的练习，保持肌肉手感，每天坚持一练，一定会有成效的！</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://span[@class="span-success"]</arg>
+</arguments>
+<msg timestamp="20210102 17:49:00.664" level="INFO">Clicking element 'xpath://span[@class="span-success"]'.</msg>
+<status status="PASS" starttime="20210102 17:49:00.662" endtime="20210102 17:49:01.714"></status>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<arguments>
+<arg>xpath://select[@name="tab"]/option</arg>
+</arguments>
+<assign>
+<var>${tags}</var>
+</assign>
+<msg timestamp="20210102 17:49:01.736" level="INFO">${tags} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="5501575680981ce44f04f6800f4b5e62", element="a0e1f6f6-0baf-4ce0-9497-baa45f2184f1")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20210102 17:49:01.715" endtime="20210102 17:49:01.736"></status>
+</kw>
+<kw name="${tag} IN [ @{tags} ]" type="for">
+<kw name="${tag} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;5501575680981ce44f04f6800f4b5e62&quot;, element=&quot;a0e1f6f6-0baf-4ce0-9497-baa45f2184f1&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${tag}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210102 17:49:01.753" level="INFO">${text} = 请选择</msg>
+<status status="PASS" starttime="20210102 17:49:01.737" endtime="20210102 17:49:01.753"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${tab-selector}'</arg>
+<arg>click element</arg>
+<arg>${tag}</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:49:01.753" endtime="20210102 17:49:01.754"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${tab-selector}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<status status="PASS" starttime="20210102 17:49:01.754" endtime="20210102 17:49:01.754"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:49:01.737" endtime="20210102 17:49:01.754"></status>
+</kw>
+<kw name="${tag} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;5501575680981ce44f04f6800f4b5e62&quot;, element=&quot;ee1ad250-d8d0-43ff-bf60-2e91da719f87&quot;)&gt;" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${tag}</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20210102 17:49:01.766" level="INFO">${text} = 分享</msg>
+<status status="PASS" starttime="20210102 17:49:01.754" endtime="20210102 17:49:01.766"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${tab-selector}'</arg>
+<arg>click element</arg>
+<arg>${tag}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${tag}</arg>
+</arguments>
+<msg timestamp="20210102 17:49:01.767" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="5501575680981ce44f04f6800f4b5e62", element="ee1ad250-d8d0-43ff-bf60-2e91da719f87")&gt;'.</msg>
+<status status="PASS" starttime="20210102 17:49:01.766" endtime="20210102 17:49:01.791"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:49:01.766" endtime="20210102 17:49:01.791"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${text}'=='${tab-selector}'</arg>
+<arg>Exit For Loop</arg>
+</arguments>
+<kw name="Exit For Loop" library="BuiltIn">
+<doc>Stops executing the enclosing for loop.</doc>
+<msg timestamp="20210102 17:49:01.793" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20210102 17:49:01.792" endtime="20210102 17:49:01.793"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:49:01.791" endtime="20210102 17:49:01.793"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:49:01.754" endtime="20210102 17:49:01.793"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:49:01.736" endtime="20210102 17:49:01.793"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://textarea[@name="title"]</arg>
+<arg>${title}</arg>
+</arguments>
+<msg timestamp="20210102 17:49:01.794" level="INFO">Typing text '测试技术学习的方法' into text field 'xpath://textarea[@name="title"]'.</msg>
+<status status="PASS" starttime="20210102 17:49:01.794" endtime="20210102 17:49:01.907"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>xpath://div[@class="CodeMirror-scroll"]</arg>
+<arg>${content}</arg>
+</arguments>
+<msg timestamp="20210102 17:49:01.909" level="INFO">Sending key(s) ('测试技术学习的方法就是不停的练习，保持肌肉手感，每天坚持一练，一定会有成效的！',) to xpath://div[@class="CodeMirror-scroll"] element.</msg>
+<msg timestamp="20210102 17:49:02.205" level="INFO">Sending keys 测试技术学习的方法就是不停的练习，保持肌肉手感，每天坚持一练，一定会有成效的！</msg>
+<status status="PASS" starttime="20210102 17:49:01.908" endtime="20210102 17:49:02.326"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://input[@value="提交"]</arg>
+</arguments>
+<msg timestamp="20210102 17:49:02.326" level="INFO">Clicking element 'xpath://input[@value="提交"]'.</msg>
+<status status="PASS" starttime="20210102 17:49:02.326" endtime="20210102 17:49:03.488"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:49:00.661" endtime="20210102 17:49:03.489"></status>
+</kw>
+<tags>
+<tag>用户发帖测试</tag>
+</tags>
+<status status="PASS" starttime="20210102 17:49:00.659" endtime="20210102 17:49:03.489" critical="yes"></status>
+</test>
+<test id="s1-t3" name="退出登录">
+<kw name="清除用户登录状态并跳转至首页" library="common">
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20210102 17:49:03.494" endtime="20210102 17:49:03.509"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${indexpage}</arg>
+</arguments>
+<msg timestamp="20210102 17:49:03.510" level="INFO">Opening url 'http://49.233.108.117:3000/'</msg>
+<status status="PASS" starttime="20210102 17:49:03.509" endtime="20210102 17:49:06.414"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:49:03.492" endtime="20210102 17:49:06.414"></status>
+</kw>
+<tags>
+<tag>用户发帖测试</tag>
+</tags>
+<status status="PASS" starttime="20210102 17:49:03.490" endtime="20210102 17:49:06.415" critical="yes"></status>
+</test>
+<kw name="关闭浏览器" library="common" type="teardown">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210102 17:49:06.420" endtime="20210102 17:49:06.555"></status>
+</kw>
+<status status="PASS" starttime="20210102 17:49:06.419" endtime="20210102 17:49:06.556"></status>
+</kw>
+<doc>用户发帖</doc>
+<status status="PASS" starttime="20210102 17:48:48.912" endtime="20210102 17:49:06.556"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0">Critical Tests</stat>
+<stat pass="3" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0">用户发帖测试</stat>
+</tag>
+<suite>
+<stat pass="3" fail="0" id="s1" name="Publish Topic">Publish Topic</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
